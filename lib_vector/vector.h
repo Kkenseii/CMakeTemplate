@@ -62,7 +62,7 @@ class TVector {
  public:
     TVector() = default;
 
-    TVector(size_t size) : _mem(size), _front(0), 
+    explicit TVector(size_t size) : _mem(size), _front(0),
         _back(size ? size - 1 : 0) {}
 
     TVector(std::initializer_list<T> list)
@@ -134,8 +134,7 @@ class TVector {
 
         if (is_empty()) {
             _front = _back = 0;
-        }
-        else {
+        } else {
             _front = (_front == 0 ? _mem._capacity - 1 : _front - 1);
         }
 
@@ -160,8 +159,7 @@ class TVector {
                 size_t dst = normalize_index(i);
                 _mem._data[dst] = _mem._data[src];
             }
-        }
-        else {
+        } else {
             _back = (_back + 1) % _mem._capacity;
 
             for (size_t i = _mem._size; i > pos; i--) {
@@ -208,8 +206,7 @@ class TVector {
                 (*this)[i] = (*this)[i - 1];
             }
             pop_front();
-        }
-        else {
+        } else {
             for (size_t i = pos; i < _mem._size - 1; i++) {
                 (*this)[i] = (*this)[i + 1];
             }
@@ -270,8 +267,7 @@ class TVector {
 
         if (is_empty()) {
             _front = _back = 0;
-        }
-        else {
+        } else {
             _back = (_back + 1) % _mem._capacity;
         }
 
@@ -305,14 +301,14 @@ class TVector {
 
     template <class Type>
     class Iterator {
-    private:
+     private:
         Type* p_cur;
 
-    public:
+     public:
         Iterator() {
             p_cur = nullptr;
         }
-        Iterator(Type* ptr) {
+        explicit Iterator(Type* ptr) {
             p_cur = ptr;
         }
         Iterator(const Iterator& other) {
