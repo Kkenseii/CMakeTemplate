@@ -28,7 +28,7 @@ class TVector {
 
     void make_contiguous() const {
         if (_front + _mem._size > _mem._capacity) {
-            std::rotate(_mem._data, _mem._data + _front, 
+            std::rotate(_mem._data, _mem._data + _front,
                 _mem._data + _mem._capacity);
             _front = 0;
             _back = _mem._size - 1;
@@ -88,7 +88,8 @@ class TVector {
     }
 
     TVector(TVector&& other) noexcept
-        : _mem(std::move(other._mem)), _front(other._front), _back(other._back) {
+        : _mem(std::move(other._mem)), _front(other._front),
+        _back(other._back) {
         other._front = other._back = 0;
     }
 
