@@ -1,7 +1,7 @@
 // Copyright 2026 Fomin Egor
 
-#ifndef LIB_TVECTOR_MEMDATA_H
-#define LIB_TVECTOR_MEMDATA_H
+#ifndef LIB_TVECTOR_MEMDATA_H_
+#define LIB_TVECTOR_MEMDATA_H_
 
 #include <cstddef>
 #include <initializer_list>
@@ -23,7 +23,7 @@ class MemData {
     size_t _size;
     size_t _capacity;
 
-public:
+ public:
     explicit MemData(size_t size = 0);
     MemData(std::initializer_list<T> list);
     MemData(const T* arr, size_t size);
@@ -182,4 +182,4 @@ MemData<T>& MemData<T>::operator=(MemData&& other) noexcept {
     return *this;
 }
 
-#endif  // LIB_TVECTOR_MEMDATA_H
+#endif  // LIB_TVECTOR_MEMDATA_H_

@@ -1,14 +1,14 @@
 // Copyright 2026 Fomin Egor
 
-#ifndef LIB_TVECTOR_TVECTOR_H
-#define LIB_TVECTOR_TVECTOR_H
+#ifndef LIB_TVECTOR_TVECTOR_H_
+#define LIB_TVECTOR_TVECTOR_H_
 
 #include <iostream>
 #include <stdexcept>
 #include <random>
 #include <algorithm>
 #include <utility>
-#include "memdata.h"
+#include "../lib_vector/memdata.h"
 
 template<typename T>
 class TVector {
@@ -28,7 +28,8 @@ class TVector {
 
     void make_contiguous() const {
         if (_front + _mem._size > _mem._capacity) {
-            std::rotate(_mem._data, _mem._data + _front, _mem._data + _mem._capacity);
+            std::rotate(_mem._data, _mem._data + _front, 
+                _mem._data + _mem._capacity);
             _front = 0;
             _back = _mem._size - 1;
         }
@@ -58,10 +59,11 @@ class TVector {
         }
     }
 
-public:
+ public:
     TVector() = default;
 
-    explicit TVector(size_t size) : _mem(size), _front(0), _back(size ? size - 1 : 0) {}
+    TVector(size_t size) : _mem(size), _front(0), 
+        _back(size ? size - 1 : 0) {}
 
     TVector(std::initializer_list<T> list)
         : _mem(list), _front(0), _back(list.size() ? list.size() - 1 : 0) {
@@ -400,4 +402,4 @@ public:
 };
 
 
-#endif  // LIB_TVECTOR_TVECTOR_H
+#endif  // LIB_TVECTOR_TVECTOR_H_
