@@ -1,7 +1,7 @@
 // Copyright 2026 Fomin Egor
 
-#ifndef LIB_EASY_EXAMPLE_EASY_EXAMPLE_H_
-#define LIB_EASY_EXAMPLE_EASY_EXAMPLE_H_
+#ifndef LIB_TVECTOR_TVECTOR_H
+#define LIB_TVECTOR_TVECTOR_H
 
 #include <iostream>
 #include <stdexcept>
@@ -400,4 +400,4 @@ public:
 };
 
 
-#endif  // LIB_EASY_EXAMPLE_EASY_EXAMPLE_H_
+#endif  // LIB_TVECTOR_TVECTOR_H
