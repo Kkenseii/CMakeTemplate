@@ -235,7 +235,7 @@ class TVector {
     void shuffle() {
         if (_mem._size < 2) return;
 
-        static std::mt19937 gen(std::random_device{}());
+        static std::mt19937 gen(std::random_device {}());
 
         for (size_t i = _mem._size - 1; i > 0; i--) {
             std::uniform_int_distribution<size_t> d(0, i);
