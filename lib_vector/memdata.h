@@ -1,7 +1,7 @@
 // Copyright 2026 Fomin Egor
 
-#ifndef LIB_TVECTOR_MEMDATA_H_
-#define LIB_TVECTOR_MEMDATA_H_
+#ifndef LIB_VECTOR_MEMDATA_H_
+#define LIB_VECTOR_MEMDATA_H_
 
 #include <cstddef>
 #include <initializer_list>
@@ -182,4 +182,4 @@ MemData<T>& MemData<T>::operator=(MemData&& other) noexcept {
     return *this;
 }
 
-#endif  // LIB_TVECTOR_MEMDATA_H_
+#endif  // LIB_VECTOR_MEMDATA_H_

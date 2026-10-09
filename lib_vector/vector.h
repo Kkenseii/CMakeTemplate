@@ -1,7 +1,7 @@
 // Copyright 2026 Fomin Egor
 
-#ifndef LIB_TVECTOR_TVECTOR_H_
-#define LIB_TVECTOR_TVECTOR_H_
+#ifndef LIB_VECTOR_VECTOR_H_
+#define LIB_VECTOR_VECTOR_H_
 
 #include <iostream>
 #include <stdexcept>
@@ -398,4 +398,4 @@ class TVector {
 };
 
 
-#endif  // LIB_TVECTOR_TVECTOR_H_
+#endif  // LIB_VECTOR_VECTOR_H_
