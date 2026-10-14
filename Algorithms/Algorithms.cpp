@@ -1,4 +1,4 @@
-// Copyright 2024 Marina Usova
+// Copyright 2026 Fomin Egor
 
 #include <stdexcept>
 #include "../Algorithms/Algorithms.h"
